@@ -1,0 +1,42 @@
+.paper {
+  width: 100%;
+  height: 59px;
+  position: fixed;
+  border-bottom: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  text-align: center;
+  z-index: 10;
+  background-color: white;
+}
+
+.mainlogo {
+  text-align: left;
+  width: 400px;
+  padding-top: 6px;
+}
+
+.navigator {
+  display: flex;
+  width: 1040px;
+  margin: auto auto;
+  padding: 0 20px;
+  padding-top: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+.right {
+  width: 260px;
+  padding-left: 140px;
+}
+.rightBanner {
+  display: flex;
+  width: 260px;
+  justify-content: space-between;
+}
+.input {
+  background-color: #f8f8f8;
+  border: 1px solid #e3e3e3;
+  width: 232px;
+  height: 28px;
+  text-align: center;
+  font-size: 16px;
+}
