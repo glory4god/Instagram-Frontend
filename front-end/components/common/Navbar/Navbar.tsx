@@ -13,13 +13,15 @@ const Navbar = () => {
     <>
       <div className={s.paper}>
         <div className={s.navigator}>
-          <a className={s.mainlogo} href="">
-            <Image
-              src={'/instagram.png'}
-              width={'115px'}
-              height={'32px'}
-              alt={'mainlogo'}></Image>
-          </a>
+          <Link href="/">
+            <a className={s.mainlogo}>
+              <Image
+                src={'/instagram.png'}
+                width={'115px'}
+                height={'32px'}
+                alt={'mainlogo'}></Image>
+            </a>
+          </Link>
           <div>
             <input className={s.input} type="text" placeholder="검색" />
           </div>
