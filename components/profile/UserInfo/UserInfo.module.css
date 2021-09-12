@@ -1,0 +1,35 @@
+.infoBox {
+  text-align: left;
+  padding-top: 6px;
+  padding-left: 40px;
+}
+.infoBox .tit02 {
+  font-size: 18px;
+  padding: 6px 0px;
+}
+
+.tit01 {
+  display: flex;
+  font-size: xx-large;
+}
+.tit01 > span {
+  padding-right: 20px;
+}
+
+.tit02 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tit02 > p {
+  margin-right: 32px;
+}
+
+.tit02 > p > span {
+  font-weight: bold;
+}
+
+.tit03 {
+  font-size: 17px;
+  font-weight: bold;
+}
