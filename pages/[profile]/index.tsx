@@ -36,7 +36,7 @@ const UserProfile = ({
           <ProfileImage
             border={true}
             profile={true}
-            size={168}
+            size={148}
             imageUrl={userData.imageUrl}
           />
           <UserInfo data={userData} />

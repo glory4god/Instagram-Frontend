@@ -18,8 +18,8 @@ const Navbar = () => {
             <a className={s.mainlogo}>
               <Image
                 src={'/instagram.png'}
-                width={'115px'}
-                height={'32px'}
+                width={'103px'}
+                height={'29px'}
                 alt={'mainlogo'}></Image>
             </a>
           </Link>

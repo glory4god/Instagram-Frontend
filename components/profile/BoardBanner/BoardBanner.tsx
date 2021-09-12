@@ -27,7 +27,7 @@ const BoardBanner: React.FC<BannerProps> = ({ bannerList }) => {
     console.log(push);
     console.log(currentBanner);
     if (currentBanner !== push) {
-      pages.push(`${pages.asPath}/${push !== 'main' ? push : ''}`);
+      // pages.push(`${pages.asPath}/${push !== 'main' ? push : ''}`);
     }
   };
 
