@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import 'styles/globals.css';
 import { Provider } from 'react-redux';
 import Head from 'components/common/Head';
 import Layout from 'components/common/Layout';
