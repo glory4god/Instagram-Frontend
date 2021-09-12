@@ -7,6 +7,7 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import ExploreIcon from '@material-ui/icons/Explore';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import AddIcon from '@material-ui/icons/Add';
+import ProfileImage from 'components/profile/ProfileImage';
 
 const Navbar = () => {
   return (
@@ -50,21 +51,28 @@ const Navbar = () => {
                 </a>
               </Link>
 
-              {/* 얘는 그냥 창 */}
-              <FavoriteBorderIcon
-                color={'disabled'}
-                style={{ fontSize: '30px' }}
-              />
+              <Link href="">
+                <a>
+                  <FavoriteBorderIcon
+                    color={'disabled'}
+                    style={{ fontSize: '30px' }}
+                  />
+                </a>
+              </Link>
 
-              {/* 이건 고민해봐야함 */}
+              {/* 이건 고민해봐야함  */}
               <Link href="/">
                 <a>
                   <AddIcon color={'disabled'} style={{ fontSize: '30px' }} />
                 </a>
               </Link>
 
-              {/* 메뉴바  */}
-              <span>사진</span>
+              {/* 누르면 메뉴바 나오도록 */}
+              <Link href="">
+                <a>
+                  <ProfileImage size={28} imageUrl={'/profile/winter.png'} />
+                </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -28,9 +28,9 @@
   padding-left: 140px;
 }
 .rightBanner {
-  display: flex;
+  display: grid;
   width: 260px;
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 .input {
   background-color: #f8f8f8;
