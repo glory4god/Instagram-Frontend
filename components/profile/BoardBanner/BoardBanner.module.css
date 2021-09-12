@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  width: full;
+  height: 3.5rem;
+  border-top: 1px solid rgb(206, 206, 206);
+  justify-content: center;
+}
+
+.bannerSpace {
+  padding-left: 4px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+}
