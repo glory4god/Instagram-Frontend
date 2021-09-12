@@ -1,0 +1,17 @@
+.round {
+  border-radius: 100%;
+}
+
+.container {
+  display: flex;
+  width: 320px;
+  justify-content: center;
+}
+
+.border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 100%;
+}
