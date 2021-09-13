@@ -1,6 +1,5 @@
 import BoardBanner from 'components/profile/BoardBanner';
 import BoardContainer from 'components/profile/BoardContainer';
-import ProfileImage from 'components/profile/ProfileImage';
 import UserInfo from 'components/profile/UserInfo';
 import Container from 'components/ui/Container';
 import {
