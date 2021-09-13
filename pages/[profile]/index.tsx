@@ -1,22 +1,29 @@
 import BoardBanner from 'components/profile/BoardBanner';
+import BoardContainer from 'components/profile/BoardContainer';
 import ProfileImage from 'components/profile/ProfileImage';
 import UserInfo from 'components/profile/UserInfo';
 import Container from 'components/ui/Container';
-import { getProfileData, getProfileIds } from 'lib/redux/profile/profileApis';
+import {
+  getProfileData,
+  getProfileIds,
+  getUserBoard,
+} from 'lib/redux/profile/profileApis';
 import { initialBanner } from 'lib/redux/profile/profileSlice';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { UserData } from 'types/profile/types';
+import { BoardData, UserData } from 'types/profile/types';
 
 const UserProfile = ({
   bannerList,
   userData,
+  boardData,
 }: {
   bannerList: string[];
   userData: UserData;
+  boardData: BoardData;
 }) => {
   const dispatch = useDispatch();
 
@@ -27,21 +34,13 @@ const UserProfile = ({
   return (
     <>
       <Head>
-        {/* 추후에 api로 데이터 가져올 때 추가 설정 */}
-        <title></title>
-        <meta name="" content=""></meta>
+        <title>(@{userData.id}) instagram 사진 및 동영상</title>
+        <meta name={`${userData.id}`} content={`${userData.id}`}></meta>
       </Head>
       <Container>
-        <div style={{ display: 'flex' }}>
-          <ProfileImage
-            border={true}
-            profile={true}
-            size={148}
-            imageUrl={userData.imageUrl}
-          />
-          <UserInfo data={userData} />
-        </div>
+        <UserInfo data={userData} />
         <BoardBanner bannerList={bannerList} />
+        <BoardContainer data={boardData} />
       </Container>
     </>
   );
@@ -49,13 +48,12 @@ const UserProfile = ({
 
 export default UserProfile;
 
-//이 과정이 사실 정확히 뭔지는 모르겠지만 빨간줄이 안뜸 ㅠㅠ
 interface IParams extends ParsedUrlQuery {
-  pages: string;
+  profile: string;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // 추후에 api로 가져오기
+  // TODO: 백엔드 연동시 추후에 api로 가져오기
   const arr = (await getProfileIds()) as string[];
   const paths = arr.map((profile) => {
     return {
@@ -76,9 +74,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
   };
   const { profile } = context.params as IParams;
 
-  // FIXME: 추후에 다시 수정 (왜 타입이 이상하지?)
+  // TODO: 백엔드 연동시 추후에 api로 가져오기
   const userData = (await getProfileData(profile)) as UserData;
+  const boardData = (await getUserBoard(profile)) as BoardData;
   return {
-    props: { userData, bannerList },
+    props: { userData, bannerList, boardData },
   };
 };

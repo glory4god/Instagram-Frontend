@@ -1,9 +1,9 @@
-.infoBox {
+.container {
+  display: flex;
   text-align: left;
-  padding-top: 6px;
-  padding-left: 40px;
+  margin-bottom: 20px;
 }
-.infoBox .tit02 {
+.container .tit02 {
   font-size: 16px;
   padding: 6px 0px;
 }
@@ -12,12 +12,12 @@
   display: flex;
   font-size: xx-large;
 }
-.tit01 > span {
-  padding-right: 20px;
+.tit01 > div {
+  padding-right: 16px;
 }
 
 .tit02 {
-  display: flex;
+  display: none;
   justify-content: space-between;
 }
 
@@ -30,6 +30,66 @@
 }
 
 .tit03 {
-  font-size: 16px;
+  display: none;
+}
+.mobiletit03 {
+  display: block;
+  text-align: left;
+  text-overflow: ellipsis;
+  padding-left: 16px;
+  font-size: 14px;
+}
+
+@media (min-width: 740px) {
+  .container {
+    display: flex;
+    text-align: left;
+    padding-top: 6px;
+  }
+  .pcinfo {
+    padding-left: 40px;
+  }
+  .tit02 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .tit03 {
+    display: block;
+    text-overflow: ellipsis;
+    font-size: 16px;
+  }
+
+  .mobiletit03 {
+    display: none;
+  }
+  .mobile {
+    display: none;
+    visibility: hidden;
+    margin-top: 0px;
+  }
+
+  .mobile > div {
+    display: none;
+  }
+}
+
+.mobile {
+  display: grid;
+  padding: 10px 0px;
+  margin-top: 152px;
+  border-top: 1px solid rgb(220, 220, 220);
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mobile > span {
+  font-size: 14px;
+  cursor: pointer;
   font-weight: bold;
+}
+
+.mobile > span > div {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(167, 166, 166);
 }
