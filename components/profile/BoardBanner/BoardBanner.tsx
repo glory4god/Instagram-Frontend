@@ -52,13 +52,15 @@ const BoardBanner: React.FC<BannerProps> = ({ bannerList }) => {
                 routeHandler(keyList[idx]);
               }}>
               <span>
-                {banner === '게시물' && <AppsOutlinedIcon fontSize="small" />}
+                {banner === '게시물' && <AppsOutlinedIcon className={s.icon} />}
                 {banner === '동영상' && (
-                  <PlayCircleOutlineIcon fontSize="small" />
+                  <PlayCircleOutlineIcon className={s.icon} />
                 )}
-                {banner === '저장됨' && <BookmarkBorderIcon fontSize="small" />}
+                {banner === '저장됨' && (
+                  <BookmarkBorderIcon className={s.icon} />
+                )}
                 {banner === '태그됨' && (
-                  <AccountBoxOutlinedIcon fontSize="small" />
+                  <AccountBoxOutlinedIcon className={s.icon} />
                 )}
               </span>
               <span className={s.bannerSpace}>{banner}</span>
