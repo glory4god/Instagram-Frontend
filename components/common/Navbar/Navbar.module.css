@@ -16,28 +16,44 @@
 
 .navigator {
   display: flex;
-  width: 935px;
   margin: auto auto;
-  padding: 0 20px;
+  padding: 0 4px 0px 20px;
   padding-top: 12px;
   justify-content: space-between;
   align-items: center;
-}
-.right {
-  width: 260px;
-  padding-left: 100px;
 }
 .rightBanner {
   display: grid;
   width: 260px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding-left: 80px;
 }
+
 .input {
-  background-color: #f8f8f8;
-  border: 1px solid #e3e3e3;
-  width: 208px;
-  height: 24px;
-  border-radius: 5%;
-  text-align: center;
-  font-size: 14px;
+  display: none;
+}
+@media (min-width: 740px) {
+  .navigator {
+    display: flex;
+    max-width: 940px;
+    margin: auto auto;
+    padding: 0 8px 0px 16px;
+    padding-top: 14px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input {
+    display: inline-block;
+    background-color: #f8f8f8;
+    border: 1px solid #e3e3e3;
+    width: 208px;
+    height: 24px;
+    border-radius: 5%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .rightBanner {
+  }
 }

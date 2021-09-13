@@ -70,7 +70,7 @@ const Navbar = () => {
               {/* 누르면 메뉴바 나오도록 */}
               <Link href="">
                 <a>
-                  <ProfileImage size={28} imageUrl={'/profile/winter.png'} />
+                  <ProfileImage size={'s'} imageUrl={'/profile/winter.png'} />
                 </a>
               </Link>
             </div>
