@@ -1,9 +1,11 @@
 import React from 'react';
 import s from './UserInfo.module.css';
-import type { UserData } from 'types/profile/types';
+
+import ProfileImage from '../ProfileImage';
 import Button from '@material-ui/core/Button';
 import SettingsIcon from '@material-ui/icons/Settings';
-import ProfileImage from '../ProfileImage';
+
+import type { UserData } from 'types/profile/types';
 
 interface UserInfoProps {
   data: UserData;

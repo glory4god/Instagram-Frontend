@@ -1,7 +1,9 @@
-import Container from 'components/ui/Container';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { ParsedUrlQuery } from 'querystring';
 import React from 'react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+
+import Container from 'components/ui/Container';
+
+import { ParsedUrlQuery } from 'querystring';
 
 const ProfileBanner = () => {
   return (
