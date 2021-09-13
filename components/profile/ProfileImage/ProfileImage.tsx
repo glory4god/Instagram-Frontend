@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ProfileImage.module.css';
+
 import cn from 'classnames';
 
 interface ImageProps {

@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+
 import s from './BoardBox.module.css';
+
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ModeCommentIcon from '@material-ui/icons/ModeComment';
 

@@ -1,18 +1,20 @@
-import BoardBanner from 'components/profile/BoardBanner';
-import BoardContainer from 'components/profile/BoardContainer';
-import UserInfo from 'components/profile/UserInfo';
-import Container from 'components/ui/Container';
+import React from 'react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
+
+import { useDispatch } from 'react-redux';
 import {
   getProfileData,
   getProfileIds,
   getUserBoard,
 } from 'lib/redux/profile/profileApis';
 import { initialBanner } from 'lib/redux/profile/profileSlice';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import Head from 'next/head';
+
+import { BoardBanner, BoardContainer, UserInfo } from 'components/profile';
+import Container from 'components/ui/Container';
+
 import { ParsedUrlQuery } from 'querystring';
-import React from 'react';
-import { useDispatch } from 'react-redux';
+
 import { BoardData, UserData } from 'types/profile/types';
 
 const UserProfile = ({
