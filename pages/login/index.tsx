@@ -13,8 +13,7 @@ const Login = () => {
       <LoginMain role="main">
         <article>
           <LoginImage />
-          <LoginWrapper>
-          </LoginWrapper>
+          <LoginWrapper />
         </article>
       </LoginMain>
     </>
