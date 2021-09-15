@@ -65,6 +65,10 @@ const ImgWrapper = styled.div`
   height: 618px;
   margin-left: -35px;
   margin-right: -15px;
+  display: none;
+  @media (min-width: 874px) {
+    display: flex;
+  }
 `;
 
 const Slider = styled.img<BannerProps>`
@@ -73,6 +77,6 @@ const Slider = styled.img<BannerProps>`
   left: 0;
   top: 0;
   opacity: ${props => props.index === props.current ? 1 : 0};
-  transform: translate(150px, 99px);
+  transform: translate(151px, 99px);
   transition: opacity 2s ease-in-out;
 `;
