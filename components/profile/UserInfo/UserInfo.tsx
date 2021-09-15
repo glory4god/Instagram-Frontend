@@ -51,12 +51,32 @@ const UserInfo: React.FC<UserInfoProps> = ({ data }) => {
             <b>{data.name}</b>
           </div>
           <div className={s.tit03}>{data.introduce}</div>
+          <a
+            className={s.tit03}
+            onClick={() => {
+              var win = window.open(`http://${data.webSite}`);
+              if (win !== null) {
+                win.focus();
+              }
+            }}>
+            <b>{data.webSite}</b>
+          </a>
         </div>
       </div>
       <div className={s.mobiletit03}>
         <b>{data.name}</b>
       </div>
       <div className={s.mobiletit03}>{data.introduce}</div>
+      <a
+        className={s.mobiletit03}
+        onClick={() => {
+          var win = window.open(`http://${data.webSite}`);
+          if (win !== null) {
+            win.focus();
+          }
+        }}>
+        <b>{data.webSite}</b>
+      </a>
       <div className={s.mobile}>
         <span>
           <div>게시물</div>
