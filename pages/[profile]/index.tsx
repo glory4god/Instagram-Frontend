@@ -8,7 +8,11 @@ import {
   getProfileIds,
   getUserBoard,
 } from 'lib/redux/profile/profileApis';
-import { initialBanner } from 'lib/redux/profile/profileSlice';
+import {
+  initialBanner,
+  setBoardData,
+  setUserData,
+} from 'lib/redux/profile/profileSlice';
 
 import { BoardBanner, BoardContainer, UserInfo } from 'components/profile';
 import { Container } from 'components/ui/Container';
@@ -30,7 +34,9 @@ const UserProfile = ({
 
   React.useEffect(() => {
     dispatch(initialBanner());
-  });
+    dispatch(setBoardData(boardData));
+    dispatch(setUserData(userData));
+  }, []);
 
   return (
     <>
@@ -39,9 +45,9 @@ const UserProfile = ({
         <meta name={`${userData.id}`} content={`${userData.id}`}></meta>
       </Head>
       <Container>
-        <UserInfo data={userData} />
+        <UserInfo />
         <BoardBanner bannerList={bannerList} />
-        <BoardContainer data={boardData} />
+        <BoardContainer />
       </Container>
     </>
   );
@@ -78,6 +84,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // TODO: 백엔드 연동시 추후에 api로 가져오기
   const userData = (await getProfileData(profile)) as UserData;
   const boardData = (await getUserBoard(profile)) as BoardData[];
+
   return {
     props: { userData, bannerList, boardData },
   };

@@ -5,8 +5,15 @@ import { GetStaticProps } from 'next';
 import { getAllBoard } from 'lib/redux/explore/exploreApis';
 import { BoardContainer } from 'components/profile';
 import type { BoardData } from 'types/profile/types';
+import { useDispatch } from 'react-redux';
+import { setBoardData } from 'lib/redux/profile/profileSlice';
 
 const Explore = ({ boardList }: { boardList: BoardData[] }) => {
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(setBoardData(boardList));
+  }, []);
   return (
     <>
       <Head>
@@ -14,7 +21,7 @@ const Explore = ({ boardList }: { boardList: BoardData[] }) => {
         <meta />
       </Head>
       <Container>
-        <BoardContainer data={boardList} />
+        <BoardContainer />
       </Container>
     </>
   );
