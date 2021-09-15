@@ -6,29 +6,36 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 
 interface IFormInputs {
-  username: string
-  password: string
+  username: string;
+  password: string;
 }
 
 const LoginForm: React.FC = () => {
   const { register, handleSubmit } = useForm<IFormInputs>();
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  const onSubmit: SubmitHandler<IFormInputs> = data => console.log(data);
+  const onSubmit: SubmitHandler<IFormInputs> = (data) => console.log(data);
 
   return (
     <LoginWrapper>
       <MainWrapper>
-        <H1 style={{ backgroundImage: `url(/instagramIcon.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: '0 -130px' }}></H1>
+        <H1
+          style={{
+            backgroundImage: `url(/instagramIcon.png)`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: '0 -130px',
+          }}></H1>
         <div>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <div>
               <LabelWrapper>
                 <Label htmlFor="username">
-                  <Span value={username}>전화번호, 사용자 이름 또는 이메일</Span>
+                  <Span value={username}>
+                    전화번호, 사용자 이름 또는 이메일
+                  </Span>
                   <Input
-                    {...register("username", { required: true })}
+                    {...register('username', { required: true })}
                     autoCorrect="off"
                     maxLength={75}
                     name="username"
@@ -44,7 +51,7 @@ const LoginForm: React.FC = () => {
                 <Label htmlFor="password">
                   <Span value={password}>비밀번호</Span>
                   <Input
-                    {...register("password", { required: true })}
+                    {...register('password', { required: true })}
                     autoCorrect="off"
                     name="password"
                     type="password"
@@ -55,7 +62,10 @@ const LoginForm: React.FC = () => {
                 <div></div>
               </LabelWrapper>
               <ButtonWrapper>
-                <LoginButton disabled={password.length < 6 ? true : (!username ? true : false)}>
+                <LoginButton
+                  disabled={
+                    password.length < 6 ? true : !username ? true : false
+                  }>
                   <div>로그인</div>
                 </LoginButton>
               </ButtonWrapper>
@@ -66,7 +76,13 @@ const LoginForm: React.FC = () => {
               </HorizonWrapper>
               <ButtonWrapper>
                 <FacebookButton>
-                  <FacebookIcon style={{ backgroundImage: `url(/instagramIcon.png)`, backgroundRepeat: 'no-repeat', backgroundPosition: '-414px -259px' }} />
+                  <FacebookIcon
+                    style={{
+                      backgroundImage: `url(/instagramIcon.png)`,
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: '-414px -259px',
+                    }}
+                  />
                   <span>Facebook으로 로그인</span>
                 </FacebookButton>
               </ButtonWrapper>
@@ -98,7 +114,8 @@ const LoginForm: React.FC = () => {
                 src="/login/appstore.png"
                 width="136px"
                 height="40px"
-                alt="" />
+                alt=""
+              />
             </a>
           </Link>
           <Link href="/">
@@ -107,14 +124,15 @@ const LoginForm: React.FC = () => {
                 src="/login/googleplay.png"
                 width="136px"
                 height="40px"
-                alt="" />
+                alt=""
+              />
             </a>
           </Link>
         </div>
       </DownloadWrapper>
     </LoginWrapper>
-  )
-}
+  );
+};
 
 export default LoginForm;
 
@@ -132,8 +150,8 @@ const LoginWrapper = styled.div`
 const MainWrapper = styled.div`
   width: 350px;
   height: 380px;
-  background-color: #FFF;
-  border: 1px solid rgba(var(--b6a,219,219,219),1);
+  background-color: #fff;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-radius: 1px;
   margin: 0 0 10px;
   padding: 10px 0;
@@ -150,8 +168,8 @@ const MainWrapper = styled.div`
 const LinkWrapper = styled.div`
   width: 350px;
   max-height: 64px;
-  background-color: #FFF;
-  border: 1px solid rgba(var(--b6a,219,219,219),1);
+  background-color: #fff;
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
   border-radius: 1px;
   margin: 0 0 10px;
   padding: 10px 0;
@@ -163,7 +181,7 @@ const LinkWrapper = styled.div`
       margin: 15px;
       text-align: center;
       & > a {
-        color: rgba(var(--d69,0,149,246),1);
+        color: rgba(var(--d69, 0, 149, 246), 1);
         font-weight: 600;
       }
     }
@@ -209,12 +227,12 @@ const Form = styled.form`
 
 const LabelWrapper = styled.div`
   display: flex;
-  border: 1px solid rgba(var(--ca6,219,219,219),1);
+  border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
   border-radius: 3px;
   margin: 0 40px 6px;
   & > div {
     width: 8px;
-    background: rgba(var(--b3f,250,250,250),1);
+    background: rgba(var(--b3f, 250, 250, 250), 1);
   }
 `;
 
@@ -229,11 +247,11 @@ const Label = styled.label`
 `;
 
 type SpanTypes = {
-  value: string
-}
+  value: string;
+};
 
 const Span = styled.span<SpanTypes>`
-  color: rgba(var(--f52,142,142,142),1);
+  color: rgba(var(--f52, 142, 142, 142), 1);
   font-size: 12px;
   height: 36px;
   left: 8px;
@@ -243,13 +261,14 @@ const Span = styled.span<SpanTypes>`
   position: absolute;
   right: 0;
   text-overflow: ellipsis;
-  ${props => props.value && 'transform: scale(.83333) translate(-26px, -10px) '}
+  ${(props) =>
+    props.value && 'transform: scale(.83333) translate(-26px, -10px) '}
 `;
 
 const Input = styled.input<SpanTypes>`
   width: 250px;
   background: #fafafa;
-  background: rgba(var(--b3f,250,250,250),1);
+  background: rgba(var(--b3f, 250, 250, 250), 1);
   border: 0;
   flex: 1 0 auto;
   margin: 0;
@@ -257,7 +276,7 @@ const Input = styled.input<SpanTypes>`
   overflow: hidden;
   padding: 9px 0 7px 8px;
   text-overflow: ellipsis;
-  ${props => props.value && 'font-size: 12px; padding: 14px 0 2px 8px'}
+  ${(props) => props.value && 'font-size: 12px; padding: 14px 0 2px 8px'}
 `;
 
 const ButtonWrapper = styled.div`
@@ -265,7 +284,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const LoginButton = styled.button`
-  background-color: rgba(var(--d69,0,149,246),1);
+  background-color: rgba(var(--d69, 0, 149, 246), 1);
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 0;
@@ -273,7 +292,7 @@ const LoginButton = styled.button`
   & > div {
     min-width: 268px;
     height: 30px;
-    color: #FFF;
+    color: #fff;
     font-size: 16px;
     font-weight: bold;
     display: table-cell;
@@ -281,7 +300,7 @@ const LoginButton = styled.button`
     text-align: center;
   }
   &:disabled {
-    background-color: rgba(var(--d69,0,149,246),.3);
+    background-color: rgba(var(--d69, 0, 149, 246), 0.3);
     cursor: default;
   }
 `;
@@ -297,15 +316,15 @@ const HorizonWrapper = styled.div`
 `;
 
 const HorizonBar = styled.div`
-  background-color: rgba(var(--b38,219,219,219),1);
+  background-color: rgba(var(--b38, 219, 219, 219), 1);
   height: 1px;
   position: relative;
-  top: .45em;
+  top: 0.45em;
   flex-grow: 1;
 `;
 
 const HorizonText = styled.div`
-  color: rgba(var(--f52,142,142,142),1);
+  color: rgba(var(--f52, 142, 142, 142), 1);
   flex-grow: 0;
   flex-shrink: 0;
   font-size: 13px;
@@ -317,7 +336,7 @@ const HorizonText = styled.div`
 const FacebookButton = styled.button`
   width: 100%;
   height: 19.2px;
-  background-color: #FFF;
+  background-color: #fff;
   border: 0;
   cursor: pointer;
   & > span {
@@ -336,7 +355,7 @@ const FacebookIcon = styled.span`
 `;
 
 const PasswordLink = styled.a`
-  color: rgba(var(--fe0,0,55,107),1);
+  color: rgba(var(--fe0, 0, 55, 107), 1);
   font-size: 12px;
   line-height: 14px;
   margin-top: 12px;
