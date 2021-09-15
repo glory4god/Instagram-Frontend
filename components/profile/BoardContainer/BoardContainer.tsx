@@ -6,15 +6,20 @@ import BoardBox from '../BoardBox';
 import { BoardData } from 'types/profile/types';
 
 interface Props {
-  data: BoardData;
+  data: BoardData[];
 }
 
 const BoardContainer: React.FC<Props> = ({ data }) => {
   return (
     <div className={s.grid}>
-      {data.imageUrl.map((arr, idx) => {
-        return <BoardBox key={idx} size={180} imageUrl={arr} />;
-      })}
+      {data
+        .map((data) => {
+          return data.imageUrl;
+        })
+        .flat()
+        .map((arr, idx) => {
+          return <BoardBox key={idx} size={180} imageUrl={arr} />;
+        })}
     </div>
   );
 };
