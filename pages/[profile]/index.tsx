@@ -11,7 +11,7 @@ import {
 import { initialBanner } from 'lib/redux/profile/profileSlice';
 
 import { BoardBanner, BoardContainer, UserInfo } from 'components/profile';
-import Container from 'components/ui/Container';
+import { Container } from 'components/ui/Container';
 
 import { ParsedUrlQuery } from 'querystring';
 
@@ -24,7 +24,7 @@ const UserProfile = ({
 }: {
   bannerList: string[];
   userData: UserData;
-  boardData: BoardData;
+  boardData: BoardData[];
 }) => {
   const dispatch = useDispatch();
 
@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   // TODO: 백엔드 연동시 추후에 api로 가져오기
   const userData = (await getProfileData(profile)) as UserData;
-  const boardData = (await getUserBoard(profile)) as BoardData;
+  const boardData = (await getUserBoard(profile)) as BoardData[];
   return {
     props: { userData, bannerList, boardData },
   };
